@@ -1,0 +1,31 @@
+The line app.use(express.static(path.join(__dirname, 'public'))); in your app.js
+ file serves static files (such as CSS, JavaScript, and images) from the public 
+ directory. This means that any files placed in the public directory can be 
+ accessed directly via your web browser. For example, if you have a file
+  public/style.css, it can be accessed at http://localhost:3000/style.css .
+  
+  express.static is a built-in middleware function in Express to serve static files.
+
+/home/puja/Downloads/programs/web_dev/YelpCamp/
+|-- app.js
+|-- public/
+    |-- style.css
+    |-- script.js
+
+
+
+Explanation
+__dirname: Resolves to /home/puja/Downloads/programs/web_dev/YelpCamp.
+path.join(__dirname, 'public'): Joins /home/puja/Downloads/programs/web_dev/YelpCamp and public, resulting in /home/puja/Downloads/programs/web_dev/YelpCamp/public.
+This line tells Express to serve static files from /home/puja/Downloads/programs/web_dev/YelpCamp/public. Therefore, if you place style.css inside the public directory, you can access it in the browser via http://localhost:3000/style.css.
+
+How It Works
+When a request comes in, Express will look for the requested file in the public directory. For example:
+
+http://localhost:3000/style.css looks for /home/puja/Downloads/programs/web_dev/YelpCamp/public/style.css.
+http://localhost:3000/script.js looks for /home/puja/Downloads/programs/web_dev/YelpCamp/public/script.js.
+
+
+
+
+
